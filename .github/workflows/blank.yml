@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Exchange rate (1 unit of currency1 equals exchangeRate units of currency2)
+        double exchangeRate = 0.75; // Example: 1 USD = 0.75 EUR
+
+        System.out.println("Currency Converter");
+        System.out.print("Enter the amount in currency1: ");
+        double amountCurrency1 = scanner.nextDouble();
+
+        // Convert the amount to currency2
+        double amountCurrency2 = convertCurrency(amountCurrency1, exchangeRate);
+
+        System.out.println(amountCurrency1 + " Currency1 is equal to " + amountCurrency2 + " Currency2");
+
+        scanner.close();
+    }
+
+    // Currency conversion method
+    private static double convertCurrency(double amount, double exchangeRate) {
+        return amount * exchangeRate;
+    }
+}
